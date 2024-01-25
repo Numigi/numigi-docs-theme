@@ -1,0 +1,65 @@
+{
+  "name": "growi-plugin-theme-numigi",
+  "version": "1.1.0",
+  "description": "GROWI plugin for the Numigi theme",
+  "license": "MIT",
+  "keywords": [
+    "growi",
+    "growi-plugin"
+  ],
+  "main": "dist/libs/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "build:w": "yarn build -w",
+    "lint:eslint": "eslint --quiet \"**/*.{js,jsx,ts,tsx}\"",
+    "lint:styles": "stylelint src/**/*.scss",
+    "lint": "run-p lint:*",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-innertext": "^1.1.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@vitejs/plugin-react": "^2.1.0",
+    "bootstrap": "^4.6.1",
+    "eslint": "^8.18.0",
+    "eslint-config-next": "^12.1.6",
+    "eslint-config-weseek": "^2.1.0",
+    "eslint-import-resolver-typescript": "^3.2.5",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^27.1.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-regex": "^1.10.0",
+    "jest": "^29.1.2",
+    "sass": "^1.55.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.5"
+  },
+  "growiPlugin": {
+    "schemaVersion": "4",
+    "types": [
+      "theme"
+    ],
+    "themes": [
+      {
+        "name": "numigi",
+        "manifestKey": "src/styles/style.scss",
+        "schemeType": "light",
+        "bg": "#EEEFF2",
+        "topbar": "#1F2128",
+        "sidebar": "#F5BE5C",
+        "accent": "#F5BE5C"
+      }
+    ]
+  }
+}
