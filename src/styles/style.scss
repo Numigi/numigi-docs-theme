@@ -4,7 +4,6 @@
 @use './theme/hsl-functions' as hsl;
 
 //== Light Mode
-//
 :root[data-theme='light'] {
   --primary: hsl(var(--primary-hs),var(--primary-l)) !important;
   --primary-hs: 38,88%;
@@ -44,7 +43,7 @@
 
   // List Group colors
   --color-list: #1F2128; // optional
-  --bgcolor-list: #EFE5D4; // optional
+  // --bgcolor-list: #EFE5D4; // optional
   --color-list-hover: var(--color-global); // optional
   --bgcolor-list-hover: #F1D7AA;// optional
   --color-list-active: var(--color-global) ; // optional
@@ -59,7 +58,6 @@
   // --bgcolor-table-hover: #; // optional
 
   // Navbar
-  // --bgcolor-navbar:linear-gradient(to right,#e60000 14%,#f39800 28%,#fff100 42%,#009944 56%,#0068b7 70%,#1d2088 87%,#920783 100%);
   --bgcolor-navbar: #1F2128;
   --bgcolor-navbar-hs: 0,100%;
   --bgcolor-navbar-l: 50%;
@@ -88,15 +86,15 @@
   --bgcolor-resize-button-hover: #A64;
 
   // Sidebar contents
---color-sidebar-context: hsl(var(--color-sidebar-context-hs),var(--color-sidebar-context-l));
---color-sidebar-context-hs: 0,0%;
---color-sidebar-context-l: 0%;
---bgcolor-sidebar-context: #{hsl.lighten(var(--primary), 77%)};
---bgcolor-sidebar-context-hs: var(--primary-hs);
---bgcolor-sidebar-context-l: calc(var(--primary-l) + 77%);
+  --color-sidebar-context: hsl(var(--color-sidebar-context-hs),var(--color-sidebar-context-l));
+  --color-sidebar-context-hs: 0,0%;
+  --color-sidebar-context-l: 0%;
+  --bgcolor-sidebar-context: #{hsl.lighten(var(--primary), 77%)};
+  --bgcolor-sidebar-context-hs: var(--primary-hs);
+  --bgcolor-sidebar-context-l: calc(var(--primary-l) + 77%);
 
   // Sidebar list group (settings)
-  --bgcolor-sidebar-list-group: #EFE5D4; // optional
+  // --bgcolor-sidebar-list-group: #EFE5D4; // optional
 
   // Subnavigation
   --bgcolor-subnav: hsl(var(--bgcolor-subnav-hs),var(--bgcolor-subnav-l));
@@ -124,73 +122,55 @@
   --bgcolor-dropdown-link-active: #F5BE5C;
   --color-dropdown-link-active: #1F2128;
 
-  // admin theme box
+  // Admin theme box
   --color-theme-color-box: #{hsl.lighten(var(--primary), 20%)};
 
-  // Button
+
+  // BUTTON
   .btn-group.grw-page-editor-mode-manager {
     .btn.btn-outline-primary {
       @include page-editor-mode-manager.btn-page-editor-mode-manager(var(--primary), #{hsl.lighten(var(--primary), 65%)}, #{hsl.lighten(var(--primary), 70%)});
     }
   }
 
-
-
-
-
-  // breaking!!
+  // BREAK PAGE LAYOUT - WARNING
   // .navbar > div {
   //   margin: -10px !important;
   // }
-  .navbar > ul > li {
-    margin-right: -20px !important;
-  }
-  .grw-subnav {
-    padding: 0 1.5rem;
-    margin: 30px;
-    background: #FFF;
-    backdrop-filter: blur(21px);
-    border-radius: 7px;
-    box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.15);
-    border: 1px solid #D1D3DB;
-  }
-  #main {
-    margin: -30px;
-  }
-
-  .wiki h1 {
-    // transform: translateX(100%);
-    // animation: marquee 15s linear infinite;
-  }
-  // @keyframes marquee {
-  //   0% {
-  //     -moz-transform: translateX(100%);
-  //     -webkit-transform: translateX(100%);
-  //     transform: translateX(100%);
-  //   }
-  //   100% {
-  //     -moz-transform: translateX(-100%);
-  //     -webkit-transform: translateX(-100%);
-  //     transform: translateX(-100%);
-  //   }
+  // .navbar > ul > li {
+  //   margin-right: -20px !important;
   // }
 
-  .grw-recent-changes {
-    margin: -15px;
-  }
+  // .grw-subnav {
+  //   padding: 0 1.5rem;
+  //   // margin: 30px;
+  //   background: #FFF;
+  //   backdrop-filter: blur(21px);
+  //   margin-bottom: 3rem;
+  //   // border-radius: 7px;
+  //   // box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.15);
+  //   // border: 1px solid #D1D3DB;
+  // }
+
+  // #main {
+  //   margin: -30px;
+  // }
+
+  // .grw-recent-changes {
+  //   margin: -15px;
+  // }
+
+
+  // CUSTOM CODE
+
 
   // Button of nav sidebar
   .grw-sidebar-nav-primary-container .btn.active {
-    // width:50px;
-    // height:50px;
-    // width:62px;
-    // height:62px;
-    // margin:7px;
     background:#0091EA;
     border-radius: 7px;
-    // animation: flash 0.3s linear infinite;
 
     &::after {
+      // Remove arrow
       display: none !important;
     }
   }
@@ -198,39 +178,26 @@
   .grw-sidebar-nav-primary-container, .grw-sidebar-nav-secondary-container {
     .btn {
         border-radius: 7px;
-        // margin: 7px;
         clip-path: inset(5px round 6px);
-
-      i {
-        // font-size: 1.5rem;
-      }
-    }
-
-    &:hover {
-  
     }
   }
-}
 
-// The sidebar of the bottom: settings, trash and help
+
+// SIDEBAR BOTTOM ICONS: SETTINGS, TRASH, HELP
 .grw-sidebar-nav-secondary-container {
   .btn {
-    // height: 64px;
-    // display: inline-flex !important;
-    // justify-content: center;
-    // align-items: center;
-
     i {
       padding: 7px;
     }
   }
 }
 
-//Navbar
+//NAVBAR
 .navbar-brand {
   background: #F5BE5C;
-  // font-size: 2.1rem !important;
+  font-size: 2.1rem !important;
 }
+
 
 #grw-navbar .grw-app-title {
   color: #EEEFF2 !important;
@@ -241,7 +208,7 @@
   border-color: #F5BE5C;
 }
 
-// Contextual navigation
+// CONTEXTUAL NAVIGATION
 .grw-sidebar {
 
   #grw-sidebar-contents-wrapper {
@@ -285,11 +252,11 @@
     }
   }
 }
+}
 
-
-//Login page
+// LOGIN PAGE
 :root[data-theme=light] .nologin {
-  // background: red !important;
+  // Change background image URL
   background: url("https://raw.githubusercontent.com/lucasjoliveau/growi-plugin-theme-numigi/main/background-img.png") !important;
   background-size: cover !important;
   background-position: center !important;
@@ -315,7 +282,7 @@
     &:hover .eff {
       top: 0 !important;
     }
-
+    
     .eff {
       background: #EEEFF2 !important;
       top: -55px !important;
@@ -356,15 +323,4 @@
       color: #F5BE5C !important;
     }
   }
-}
-
-
-// Settings sidebar list group
-.list-group admin-navigation {
-
-}
-
-// Recent change panel - sidebar
-.grw-recent-changes {
-
 }
