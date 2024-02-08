@@ -9,7 +9,7 @@
 // $primary: variables.$growi-blue !default;
 $primary: #F5BE5C !default;
 $secondary: #6c757d !default;
-$info: #009fbb !default;
+$info: #1F2128 !default;
 $success: #00bb83 !default;
 $warning: #ffa32b !default;
 $danger: rgb(228, 14, 78) !default;
@@ -65,11 +65,12 @@ $container-max-widths: (
 
 //== Typography
 //
+// Load custom font from Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 //## Font, line-height, and color for body text, headings, and more.
-// $font-family-sans-serif: Lato, -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-$font-family-sans-serif: "Manrope", sans-serif !important;
+$font-family-sans-serif: Lato, -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+$font-family-sans-serif: "Arial", sans-serif !important;
 $font-family-serif: Georgia, 'Times New Roman', Times, serif;
 $font-family-monospace: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
 $font-family-base: $font-family-sans-serif;
