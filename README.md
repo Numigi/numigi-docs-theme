@@ -7,7 +7,7 @@
 
 ## About The Project
 
-This theme is based off a [starter template from the editor](https://github.com/weseek/growi-plugin-theme-welcome-to-fumiya-room).
+This theme is based off a GROWI preset's themes. It is built for GROWI version 7.0.0 and onward.
 
 ## Getting Started
 
@@ -47,13 +47,16 @@ Theme metadata is set directly in the `package.json` file, as an object of the `
 ```json
     "themes": [
       {
-        "name": "numigi",
+        "name": "Numigi",
         "manifestKey": "src/styles/style.scss",
         "schemeType": "light",
-        "bg": "#EEEFF2",
-        "topbar": "#1F2128",
-        "sidebar": "#F5BE5C",
-        "accent": "#F5BE5C"
+        "lightBg": "#EEEFF2",
+        "darkBg": "#D1D3DB",
+        "lightSidebar": "#F3CD88",
+        "darkSidebar": "#1F2128",
+        "lightIcon": "#1F2128",
+        "darkIcon": "#EBB845",
+        "createBtn": "#1F2128"
       }
     ]
 ```

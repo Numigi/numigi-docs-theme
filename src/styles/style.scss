@@ -2,311 +2,100 @@
 @use './bootstrap/variables' as *;
 @use './theme/mixins/page-editor-mode-manager';
 @use './theme/hsl-functions' as hsl;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-//== Light Mode
-:root[data-theme='light'] {
+:root[data-bs-theme=light] {
+  --grw-sidebar-nave-bg: var(--bs-body-color);
+  --grw-sidebar-nav-btn-hover-bg: hsl(var(--primary-hs), 58%);
+
+  --grw-highlight-100: var(--primary);
+
+  --bs-body-color: hsl(var(--bs-body-color-hs), var(--bs-body-color-l));
+  --bs-body-color-hs: 227, 13%;
+  --bs-body-color-l: 14%;
+
+  --bs-body-bg: var(--bgcolor-global);
+
+  // Links
+  --bs-link-color: hsl(var(--bs-link-color-hs), var(--bs-link-color-l));
+  --bs-link-color-hs: 228,13%;
+  --bs-link-color-l: 54%;
+  --bs-link-color-rgb: var(--bs-link-color);
+  --bs-link-hover-color: var(--primary);
+
+  // Page editor mode buttons
+  --grw-page-editor-mode-manager-btn-color: var(--bs-body-color);
+  --grw-page-editor-mode-manager-btn-bg: var(--bs-body-bg);
+
+  --grw-sidebar-head-bg: var(--bs-body-color);
+}
+
+:root[data-bs-theme=light] {
+  font-family: Manrope;
   --primary: hsl(var(--primary-hs),var(--primary-l)) !important;
   --primary-hs: 38,88%;
   --primary-l: 66%;
   --secondary: hsl(var(--secondary-hs),var(--secondary-l)) !important;
   --secondary-hs: 208,7%;
-  --secondary-l: 46%;
-  --accent: hsl(var(--accent-hs),var(--accent-l));
-  --accent-hs: 0,0%;
-  --accent-l: 0%;
+  --secondary-l: 4var(--bg-color-global)6%;
 
   // Background colors
   --bgcolor-global: hsl(var(--bgcolor-global-hs),var(--bgcolor-global-l));
   --bgcolor-global-hs: 225,13%;
-  --bgcolor-global-l: 97%;
-  --bgcolor-inline-code: #1F2128; //optional
-  --bgcolor-card: #F5BE5C;
+  --bgcolor-global-l: 94%;
+  --bgcolor-inline-code: var(--bs-body-color); //optional
+  --bgcolor-card: var(--primary);
   --bgcolor-blinked-section: #{hsl.alpha(var(--primary), 90%)};
-  //--bgcolor-keyword-highlighted: #{$grw-marker-yellow};
+}
 
-  // Font colors
-  --color-global: hsl(var(--color-global-hs),var(--color-global-l));
-  --color-global-hs: 227,13%;
-  --color-global-l: 14%;
-  --color-reversal: #1F2128;
-  // --color-header: #2b2b2b;
-  --color-link: hsl(var(--color-link-hs),var(--color-link-l));
-  --color-link-hs: 227,13%;
-  --color-link-l: 50%;
-  --color-link-hover:#1F2128;
-  --color-link-wiki: var(--color-link);
-  --color-link-wiki-hs: var(--color-link-hs);
-  --color-link-wiki-l: var(--color-link-l);
-  --color-link-wiki-hover: #{hsl.lighten(var(--color-link), 20%)};
-  --color-link-nabvar: #EEEFF2;
-  --color-inline-code: #F5BE5C; // optional
+// Index
+.grw-site-name {
+  font-family: Manrope;
+  font-weight: 700;
 
-  // List Group colors
-  --color-list: #1F2128; // optional
-  // --bgcolor-list: #EFE5D4; // optional
-  --color-list-hover: var(--color-global); // optional
-  --bgcolor-list-hover: #F1D7AA;// optional
-  --color-list-active: var(--color-global) ; // optional
-  --bgcolor-list-active: #F5BE5C; //optional
-  // --color-page-list-group-item-meta: #{$gray-500}; // optional
-
-  // Table colors
-  // --color-table: #; // optional
-  // --bgcolor-table: #; // optional
-  // --border-color-table: #; // optional
-  // --color-table-hover: #; // optional
-  // --bgcolor-table-hover: #; // optional
-
-  // Navbar
-  --bgcolor-navbar: #1F2128;
-  --bgcolor-navbar-hs: 0,100%;
-  --bgcolor-navbar-l: 50%;
-  --bgcolor-search-top-dropdown: hsl(var(--bgcolor-search-top-dropdown-hs),var(--bgcolor-search-top-dropdown-l));
-  --bgcolor-search-top-dropdown-hs: 0,0%;
-  --bgcolor-search-top-dropdown-l: 100%;
-  --border-image-navbar: #F5BE5C;
-
-  // Logo colors
-  --bgcolor-logo: #1F2128;
-  --fillcolor-logo-mark: #1F2128;
-
-  // Sidebar
-  --bgcolor-sidebar: var(--primary);
-  --bgcolor-sidebar-hs: var(--primary-hs);
-  --bgcolor-sidebar-l: var(--primary-l);
-  --bgcolor-sidebar-nav-item-active: #0000FF; // optional
-  // --text-shadow-sidebar-nav-item-active: 0px 0px 10px #3e4042; // optional
-
-  // Sidebar resize button
-  --color-resize-button: #607000;
-  --bgcolor-resize-button: hsl(var(--bgcolor-resize-button-hs),var(--bgcolor-resize-button-l));
-  --bgcolor-resize-button-hs: 140,100%;
-  --bgcolor-resize-button-l: 50%;
-  --color-resize-button-hover:#56F;
-  --bgcolor-resize-button-hover: #A64;
-
-  // Sidebar contents
-  --color-sidebar-context: hsl(var(--color-sidebar-context-hs),var(--color-sidebar-context-l));
-  --color-sidebar-context-hs: 0,0%;
-  --color-sidebar-context-l: 0%;
-  --bgcolor-sidebar-context: #{hsl.lighten(var(--primary), 77%)};
-  --bgcolor-sidebar-context-hs: var(--primary-hs);
-  --bgcolor-sidebar-context-l: calc(var(--primary-l) + 77%);
-
-  // Sidebar list group (settings)
-  // --bgcolor-sidebar-list-group: #EFE5D4; // optional
-
-  // Subnavigation
-  --bgcolor-subnav: hsl(var(--bgcolor-subnav-hs),var(--bgcolor-subnav-l));
-  --bgcolor-subnav-hs: var(--bgcolor-global-hs);
-  --bgcolor-subnav-l: calc(var(--bgcolor-global-l) - 3%);
-
-  // Tabs
-  // --bordercolor-nav-tabs: #{$gray-300}; // optional
-  // --color-nav-tabs-link-active: #; //optional
-  // --bordercolor-nav-tabs-hover: # # $bordercolor-nav-tabs; // optional
-  // --bordercolor-nav-tabs-active: # # // optional
-
-  // Tags
-  // --color-tags: #; //optional
-  // --bgcolor-tags: #; //optional
-
-  // Icon colors
-  --color-editor-icons: #1F2128;
-
-  // Border colors
-  --border-color-theme: #000;
-  --bordercolor-inline-code: #000; // optional
-
-  // Dropdown colors
-  --bgcolor-dropdown-link-active: #F5BE5C;
-  --color-dropdown-link-active: #1F2128;
-
-  // Admin theme box
-  --color-theme-color-box: #{hsl.lighten(var(--primary), 20%)};
-
-
-  // BUTTON
-  .btn-group.grw-page-editor-mode-manager {
-    .btn.btn-outline-primary {
-      @include page-editor-mode-manager.btn-page-editor-mode-manager(var(--primary), #{hsl.lighten(var(--primary), 65%)}, #{hsl.lighten(var(--primary), 70%)});
-    }
-  }
-
-  // BREAK PAGE LAYOUT - WARNING
-  // .navbar > div {
-  //   margin: -10px !important;
-  // }
-  // .navbar > ul > li {
-  //   margin-right: -20px !important;
-  // }
-
-  // .grw-subnav {
-  //   padding: 0 1.5rem;
-  //   // margin: 30px;
-  //   background: #FFF;
-  //   backdrop-filter: blur(21px);
-  //   margin-bottom: 3rem;
-  //   // border-radius: 7px;
-  //   // box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.15);
-  //   // border: 1px solid #D1D3DB;
-  // }
-
-  // #main {
-  //   margin: -30px;
-  // }
-
-  // .grw-recent-changes {
-  //   margin: -15px;
-  // }
-
-
-  // CUSTOM CODE
-
-
-  // Button of nav sidebar
-  .grw-sidebar-nav-primary-container .btn.active {
-    background:#0091EA;
-    border-radius: 7px;
-
-    &::after {
-      // Remove arrow
-      display: none !important;
-    }
-  }
-
-  .grw-sidebar-nav-primary-container, .grw-sidebar-nav-secondary-container {
-    .btn {
-        border-radius: 7px;
-        clip-path: inset(5px round 6px);
-    }
-  }
-
-
-// SIDEBAR BOTTOM ICONS: SETTINGS, TRASH, HELP
-.grw-sidebar-nav-secondary-container {
-  .btn {
-    i {
-      padding: 7px;
-    }
+  a {
+    color: #FFFFFF;
   }
 }
 
-//NAVBAR
-.navbar-brand {
-  background: #F5BE5C;
-  font-size: 2.11rem !important;
-}
-
-
-#grw-navbar .grw-app-title {
-  color: #EEEFF2 !important;
-  margin-left: 20px;
-}
-
-#grw-navbar {
-  border-color: #F5BE5C;
-}
-
-// CONTEXTUAL NAVIGATION
-.grw-sidebar {
-
-  #grw-sidebar-contents-wrapper {
-    border-right: 3px solid #F5BE5C;
-  }
-
-  div.grw-contextual-navigation>div {
-  background: #EFE5D4 !important;
-  }
-
-  // The tool to resize the contextual navigation panel
-  .grw-navigation-draggable {
-    .grw-navigation-draggable-hitarea-child {
-      background: #F5BE5C !important;
-      width: 4px !important;
-    }
-  }
-
-  .grw-pagetree {
-    .list-group-item.list-group-item-action {
-      margin-bottom: 4px;
-      margin-top: 4px;
-      border-radius: 7px;
-      &:hover {
-        background: #F1D5A4 !important;
-      }
-
-      .grw-pagetree-triangle-btn {
-        svg {
-          fill: #1F2128 !important;
-        }
-      }
-    }
-
-    .list-group-item-action .grw-pagetree-current-page-item {
-      background: #f5bd5c;
-    }
-
-    #grw-pagetree-current-page-item {
-      background: #f5bd5c !important;
-    }
-  }
-}
+#grw-contextual-sub-nav {
+  background-color: var(--bs-body-color);
 }
 
 // LOGIN PAGE
-:root[data-theme=light] .nologin {
-  // Change background image URL
-  background: url("https://raw.githubusercontent.com/numigi/growi-plugin-theme-numigi/main/background-img.png") !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
+:root[data-bs-theme=light] .nologin {
+  background: url('../images/background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   .input-group {
     input {
-      padding: 1.5rem 1rem 1.5rem 0;
-      background: #353945 !important;
-    }
-
-    span.input-group-text {
-      background: #353945 !important;
+      color: var(--bgcolor-global);
+      background: #353945;
     }
   }
 
-  button#login {
-    background: #F5BE5C !important;
-    border-radius: 100px !important;
-    padding: 1rem 6rem;
+  .btn-login {
     width: 100%;
+    padding: 1rem 6rem;
+    background: var(--primary);
+    border-radius: 100px;
 
-    &:hover .eff {
-      top: 0 !important;
-    }
-    
-    .eff {
-      background: #EEEFF2 !important;
-      top: -55px !important;
+    .material-symbols-outlined {
+      color: var(--bs-body-color);
     }
 
-    .btn-label {
-      background: transparent !important;
-      padding: 0 !important;
-
-      i {
-        color: #1F2128 !important;
-      }
-    }
-
-    .btn-label-text {
-      color: #1F2128 !important;
+    .flex-grow-1 {
+      color: var(--bs-body-color);
     }
   }
 
   .nologin-header {
-    background: #F5BE5C !important;
     width: 400px;
     // padding: 1.5rem;
-    padding-bottom: 30px !important;
+    padding-bottom: 30px;
+    background: var(--primary);
 
     h1 {
       display: none;
@@ -316,11 +105,11 @@
   .nologin-dialog {
     width: 400px;
     padding: 1.5rem;
-    background: #1F2128 !important;
+    background: var(--bs-body-color);
     box-shadow: 0px 24px 45px 0px rgba(36, 36, 35, 0.23);
+  }
 
-    .link-switch {
-      color: #F5BE5C !important;
-    }
+  .link-growi-org {
+    display: none;
   }
 }

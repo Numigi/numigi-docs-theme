@@ -1,12 +1,8 @@
 {
   "name": "growi-plugin-theme-numigi",
-  "version": "0.1.4",
+  "version": "0.1.0-1",
   "description": "GROWI plugin for the Numigi theme",
   "license": "MIT",
-  "keywords": [
-    "growi",
-    "growi-plugin"
-  ],
   "main": "dist/libs/index.js",
   "files": [
     "dist"
@@ -52,13 +48,16 @@
     ],
     "themes": [
       {
-        "name": "numigi",
+        "name": "Numigi",
         "manifestKey": "src/styles/style.scss",
         "schemeType": "light",
-        "bg": "#EEEFF2",
-        "topbar": "#1F2128",
-        "sidebar": "#F5BE5C",
-        "accent": "#F5BE5C"
+        "lightBg": "#EEEFF2",
+        "darkBg": "#D1D3DB",
+        "lightSidebar": "#F3CD88",
+        "darkSidebar": "#1F2128",
+        "lightIcon": "#1F2128",
+        "darkIcon": "#EBB845",
+        "createBtn": "#1F2128"
       }
     ]
   }
