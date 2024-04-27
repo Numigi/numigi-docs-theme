@@ -1,0 +1,23 @@
+@use './mixins/button' as button;
+
+:root[data-bs-theme=light] .btn {
+  &-primary {
+    @include button.primary;
+  }
+
+  &-secondary {
+    @include button.secondary;
+  }
+
+  &-outline-primary {
+    @include button.outline-primary;
+  }
+
+  &-outline-secondary {
+    @include button.outline-secondary;
+  }
+
+  &-outline-neutral-secondary {
+    @include button.outline-neutral-secondary;
+  }
+}

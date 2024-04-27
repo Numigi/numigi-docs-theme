@@ -1,326 +1,287 @@
 @use './variables' as *;
 @use './bootstrap/variables' as *;
-@use './theme/mixins/page-editor-mode-manager';
 @use './theme/hsl-functions' as hsl;
 
-//== Light Mode
-:root[data-theme='light'] {
+@use './atoms/alert' as *;
+@use './atoms/button' as *;
+@use './atoms/typography' as *;
+
+@use './molecules/page-editor-mode-manager' as *;
+
+@use './pages/login' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+// META
+/* Regroups native variables that are used across the website */
+:root[data-bs-theme=light] {
+  --grw-sidebar-nave-bg: var(--bs-body-color);
+
+  --grw-sidebar-nav-btn-color: #EEEFF2;
+  --grw-sidebar-nav-btn-hover-bg: #343433;
+  --grw-sidebar-nav-btn-hover-color: #EEEFF2;
+  --grw-sidebar-nav-btn-active-color: #EEEFF2;
+  --grw-sidebar-nav-btn-active-bg: #474746;
+
+  --grw-highlight-100: var(--primary);
+
+  --bs-body-color: hsl(var(--bs-body-color-hs), var(--bs-body-color-l));
+  --bs-body-color-hs: 227, 13%;
+  --bs-body-color-l: 14%;
+
+  --bs-body-bg: var(--bgcolor-global);
+
+  --bs-code-color: var(--primary);
+
+  // Links
+  --bs-link-color: hsl(var(--bs-link-color-hs), var(--bs-link-color-l));
+  --bs-link-color-hs: 228,13%;
+  --bs-link-color-l: 54%;
+  --bs-link-color-rgb: var(--bs-link-color);
+  --bs-link-hover-color: var(--primary);
+
+  --grw-sidebar-head-bg: var(--bs-body-color);
+}
+
+:root[data-bs-theme=light] {
   --primary: hsl(var(--primary-hs),var(--primary-l)) !important;
   --primary-hs: 38,88%;
   --primary-l: 66%;
   --secondary: hsl(var(--secondary-hs),var(--secondary-l)) !important;
   --secondary-hs: 208,7%;
-  --secondary-l: 46%;
-  --accent: hsl(var(--accent-hs),var(--accent-l));
-  --accent-hs: 0,0%;
-  --accent-l: 0%;
+  --secondary-l: 4var(--bg-color-global)6%;
 
   // Background colors
   --bgcolor-global: hsl(var(--bgcolor-global-hs),var(--bgcolor-global-l));
   --bgcolor-global-hs: 225,13%;
   --bgcolor-global-l: 97%;
-  --bgcolor-inline-code: #1F2128; //optional
-  --bgcolor-card: #F5BE5C;
+  --bgcolor-inline-code: var(--bs-body-color); //optional
+  --bgcolor-card: var(--primary);
   --bgcolor-blinked-section: #{hsl.alpha(var(--primary), 90%)};
-  //--bgcolor-keyword-highlighted: #{$grw-marker-yellow};
 
-  // Font colors
-  --color-global: hsl(var(--color-global-hs),var(--color-global-l));
-  --color-global-hs: 227,13%;
-  --color-global-l: 14%;
-  --color-reversal: #1F2128;
-  // --color-header: #2b2b2b;
-  --color-link: hsl(var(--color-link-hs),var(--color-link-l));
-  --color-link-hs: 227,13%;
-  --color-link-l: 50%;
-  --color-link-hover:#1F2128;
-  --color-link-wiki: var(--color-link);
-  --color-link-wiki-hs: var(--color-link-hs);
-  --color-link-wiki-l: var(--color-link-l);
-  --color-link-wiki-hover: #{hsl.lighten(var(--color-link), 20%)};
-  --color-link-nabvar: #EEEFF2;
-  --color-inline-code: #F5BE5C; // optional
+  --white-1000: hsl(var(--white-1000-hs),var(--white-1000-l));
+  --white-1000-hs: 225,13%;
+  --white-1000-l: 94%;
+}
 
-  // List Group colors
-  --color-list: #1F2128; // optional
-  // --bgcolor-list: #EFE5D4; // optional
-  --color-list-hover: var(--color-global); // optional
-  --bgcolor-list-hover: #F1D7AA;// optional
-  --color-list-active: var(--color-global) ; // optional
-  --bgcolor-list-active: #F5BE5C; //optional
-  // --color-page-list-group-item-meta: #{$gray-500}; // optional
+// NAVIGATION & SIDEBAR
+.grw-navigation-draggable-line {
+  background-color: var(--primary) !important;
+}
 
-  // Table colors
-  // --color-table: #; // optional
-  // --bgcolor-table: #; // optional
-  // --border-color-table: #; // optional
-  // --color-table-hover: #; // optional
-  // --bgcolor-table-hover: #; // optional
+:root[data-bs-theme=light] .sidebar-contents-container {
+  background-color: #EFE5D4 !important;
+  border-right: 4px solid var(--primary);
 
-  // Navbar
-  --bgcolor-navbar: #1F2128;
-  --bgcolor-navbar-hs: 0,100%;
-  --bgcolor-navbar-l: 50%;
-  --bgcolor-search-top-dropdown: hsl(var(--bgcolor-search-top-dropdown-hs),var(--bgcolor-search-top-dropdown-l));
-  --bgcolor-search-top-dropdown-hs: 0,0%;
-  --bgcolor-search-top-dropdown-l: 100%;
-  --border-image-navbar: #F5BE5C;
-
-  // Logo colors
-  --bgcolor-logo: #1F2128;
-  --fillcolor-logo-mark: #1F2128;
-
-  // Sidebar
-  --bgcolor-sidebar: var(--primary);
-  --bgcolor-sidebar-hs: var(--primary-hs);
-  --bgcolor-sidebar-l: var(--primary-l);
-  --bgcolor-sidebar-nav-item-active: #0000FF; // optional
-  // --text-shadow-sidebar-nav-item-active: 0px 0px 10px #3e4042; // optional
-
-  // Sidebar resize button
-  --color-resize-button: #607000;
-  --bgcolor-resize-button: hsl(var(--bgcolor-resize-button-hs),var(--bgcolor-resize-button-l));
-  --bgcolor-resize-button-hs: 140,100%;
-  --bgcolor-resize-button-l: 50%;
-  --color-resize-button-hover:#56F;
-  --bgcolor-resize-button-hover: #A64;
-
-  // Sidebar contents
-  --color-sidebar-context: hsl(var(--color-sidebar-context-hs),var(--color-sidebar-context-l));
-  --color-sidebar-context-hs: 0,0%;
-  --color-sidebar-context-l: 0%;
-  --bgcolor-sidebar-context: #{hsl.lighten(var(--primary), 77%)};
-  --bgcolor-sidebar-context-hs: var(--primary-hs);
-  --bgcolor-sidebar-context-l: calc(var(--primary-l) + 77%);
-
-  // Sidebar list group (settings)
-  // --bgcolor-sidebar-list-group: #EFE5D4; // optional
-
-  // Subnavigation
-  --bgcolor-subnav: hsl(var(--bgcolor-subnav-hs),var(--bgcolor-subnav-l));
-  --bgcolor-subnav-hs: var(--bgcolor-global-hs);
-  --bgcolor-subnav-l: calc(var(--bgcolor-global-l) - 3%);
-
-  // Tabs
-  // --bordercolor-nav-tabs: #{$gray-300}; // optional
-  // --color-nav-tabs-link-active: #; //optional
-  // --bordercolor-nav-tabs-hover: # # $bordercolor-nav-tabs; // optional
-  // --bordercolor-nav-tabs-active: # # // optional
-
-  // Tags
-  // --color-tags: #; //optional
-  // --bgcolor-tags: #; //optional
-
-  // Icon colors
-  --color-editor-icons: #1F2128;
-
-  // Border colors
-  --border-color-theme: #000;
-  --bordercolor-inline-code: #000; // optional
-
-  // Dropdown colors
-  --bgcolor-dropdown-link-active: #F5BE5C;
-  --color-dropdown-link-active: #1F2128;
-
-  // Admin theme box
-  --color-theme-color-box: #{hsl.lighten(var(--primary), 20%)};
-
-
-  // BUTTON
-  .btn-group.grw-page-editor-mode-manager {
-    .btn.btn-outline-primary {
-      @include page-editor-mode-manager.btn-page-editor-mode-manager(var(--primary), #{hsl.lighten(var(--primary), 65%)}, #{hsl.lighten(var(--primary), 70%)});
-    }
-  }
-
-  // BREAK PAGE LAYOUT - WARNING
-  // .navbar > div {
-  //   margin: -10px !important;
-  // }
-  // .navbar > ul > li {
-  //   margin-right: -20px !important;
-  // }
-
-  // .grw-subnav {
-  //   padding: 0 1.5rem;
-  //   // margin: 30px;
-  //   background: #FFF;
-  //   backdrop-filter: blur(21px);
-  //   margin-bottom: 3rem;
-  //   // border-radius: 7px;
-  //   // box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.15);
-  //   // border: 1px solid #D1D3DB;
-  // }
-
-  // #main {
-  //   margin: -30px;
-  // }
-
-  // .grw-recent-changes {
-  //   margin: -15px;
-  // }
-
-
-  // CUSTOM CODE
-
-
-  // Button of nav sidebar
-  .grw-sidebar-nav-primary-container .btn.active {
-    background:#0091EA;
-    border-radius: 7px;
-
-    &::after {
-      // Remove arrow
-      display: none !important;
-    }
-  }
-
-  .grw-sidebar-nav-primary-container, .grw-sidebar-nav-secondary-container {
-    .btn {
-        border-radius: 7px;
-        clip-path: inset(5px round 6px);
-    }
-  }
-
-
-// SIDEBAR BOTTOM ICONS: SETTINGS, TRASH, HELP
-.grw-sidebar-nav-secondary-container {
-  .btn {
-    i {
-      padding: 7px;
-    }
+  &.open {
+    border: solid 2px var(--primary);
+    border-radius: 0px 20px 20px 0px;
   }
 }
 
-//NAVBAR
-.navbar-brand {
-  background: #F5BE5C;
-  font-size: 2.11rem !important;
-}
+:root[data-bs-theme=light] .grw-sidebar-nav {
+  background-color: var(--primary);
 
+  .btn-group {
+    transition: none !important;
 
-#grw-navbar .grw-app-title {
-  color: #EEEFF2 !important;
-  margin-left: 20px;
-}
+    .btn-primary {
+      --bs-btn-color: var(--bs-body-bg);
 
-#grw-navbar {
-  border-color: #F5BE5C;
-}
-
-// CONTEXTUAL NAVIGATION
-.grw-sidebar {
-
-  #grw-sidebar-contents-wrapper {
-    border-right: 3px solid #F5BE5C;
-  }
-
-  div.grw-contextual-navigation>div {
-  background: #EFE5D4 !important;
-  }
-
-  // The tool to resize the contextual navigation panel
-  .grw-navigation-draggable {
-    .grw-navigation-draggable-hitarea-child {
-      background: #F5BE5C !important;
-      width: 4px !important;
-    }
-  }
-
-  .grw-pagetree {
-    .list-group-item.list-group-item-action {
-      margin-bottom: 4px;
-      margin-top: 4px;
-      border-radius: 7px;
       &:hover {
-        background: #F1D5A4 !important;
+        svg {
+          fill: #343433;
+        }
+
+        .icon {
+          color: var(--bs-body-bg);
+        }
       }
 
-      .grw-pagetree-triangle-btn {
+      &:active {
         svg {
-          fill: #1F2128 !important;
+          fill: #474746;
+        }
+
+        .icon {
+          color: var(--bs-body-bg);
+        }
+      }
+
+      svg {
+        fill: var(--bs-body-color);
+      }
+    }
+
+  }
+
+  .btn-primary {
+    --bs-btn-color: #A67D38;
+  }
+
+  .btn.active {
+    color: #1C1B1F;
+
+    &:after {
+      background-color: var(--bs-body-color);
+    }
+  }
+}
+
+// COMPONENTS
+:root[data-bs-theme=light] .btn {
+  &-copy {
+    border: none;
+  }
+
+  &-page-item-control {
+    --bs-btn-color: #FFFFFF80;
+    --bs-btn-bg: transparent;
+    --bs-btn-hover-color: #FFFFFFBF;
+    --bs-btn-hover-bg: transparent;
+    --bs-btn-active-color: #EEEFF2;
+    --bs-btn-active-bg: transparent;
+    --bs-btn-border-width: 0px;
+  }
+}
+
+.growi {
+  #page-editor {
+    .cm-activeLine {
+      background-color: rgba(245, 190, 92, 0.23);
+
+      &Gutter {
+        background-color: rgba(245, 190, 92, 0.23);
+      }
+    }
+  }
+
+  .wiki {
+    a {
+      &:not(.alert-link) {
+        color: var(--bs-body-color) !important;
+        text-decoration: none;
+        border-bottom: solid 1.5px var(--bs-body-color);
+
+        &:hover {
+          color: #343433 !important;
+          border-bottom: solid 1.5px #343433;
+        }
+
+        &:active {
+          color: #474746 !important;
+          border-bottom: solid 1.5px #474746;
+        }
+
+        &:visited {
+          color: #F5A55C !important;
+          border-bottom: solid 1.5px #F5A55C;
         }
       }
     }
 
-    .list-group-item-action .grw-pagetree-current-page-item {
-      background: #f5bd5c;
-    }
-
-    #grw-pagetree-current-page-item {
-      background: #f5bd5c !important;
+    code {
+      border: none;
     }
   }
 }
+
+a {
+  &.link-opacity-75-hover {
+    color: var(--bs-body-color);
+    border-bottom: solid 1.5px var(--bs-body-color);
+
+    &:hover {
+      color: #343433;
+      border-bottom: solid 1.5px #343433;
+    }
+
+    &:active {
+      color: #474746;
+      border-bottom: solid 1.5px #474746;
+    }
+  }
+
+  &.toc-link {
+    color: var(--bs-body-color);
+
+    &:hover {
+      color: #343433;
+      border-bottom: solid 1px #343433;
+    }
+
+    &:active {
+      color: #474746;
+      border-bottom: solid 1.5px #474746;
+    }
+  }
 }
 
-// LOGIN PAGE
-:root[data-theme=light] .nologin {
-  // Change background image URL
-  background: url("https://raw.githubusercontent.com/numigi/growi-plugin-theme-numigi/main/background-img.png") !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
+.card {
+  padding: 1rem .5rem;
+}
 
-  .input-group {
-    input {
-      padding: 1.5rem 1rem 1.5rem 0;
-      background: #353945 !important;
-    }
+.comment-form .bg-comment {
+  background-color: transparent !important;
+  border: none !important;
+}
 
-    span.input-group-text {
-      background: #353945 !important;
-    }
+:root[data-bs-theme=light] .list-group-item {
+  --bs-list-group-action-hover-bg: hsla(var(--primary-hs),var(--primary-l), .6);
+  --bs-list-group-active-bg: var(--primary);
+  border-radius: 5px;
+
+  .material-symbols-outlined {
+    color: var(--bs-body-color);
+  }
+}
+
+:root[data-bs-theme=light] .dropdown {
+
+  &-menu {
+    --bs-dropdown-bg: hsl(210, 11%, 96%, .7);
+    --bs-dropdown-border-color: #D1D3DB;
+    --bs-dropdown-link-active-color: #000;
+    --bs-dropdown-link-active-bg: #F3CD88;
+    --bs-dropdown-link-color: #000;
+    --bs-dropdown-link-hover-color: #000;
+    --bs-dropdown-link-hover-bg: hsla(var(--primary-hs), var(--primary-l), .2);
+    --bs-dropdown-box-shadow: 0px 4px 17px rgba(0, 0, 0, .15);
+    backdrop-filter: blur(15px);
   }
 
-  button#login {
-    background: #F5BE5C !important;
-    border-radius: 100px !important;
-    padding: 1rem 6rem;
-    width: 100%;
+  &-item {
+    font-weight: 600;
+  }
+}
 
-    &:hover .eff {
-      top: 0 !important;
-    }
-    
-    .eff {
-      background: #EEEFF2 !important;
-      top: -55px !important;
-    }
-
-    .btn-label {
-      background: transparent !important;
-      padding: 0 !important;
-
-      i {
-        color: #1F2128 !important;
-      }
-    }
-
-    .btn-label-text {
-      color: #1F2128 !important;
-    }
+:root[data-bs-theme=light] .form {
+  &-control {
+    background-color: #FFFFFF;
   }
 
-  .nologin-header {
-    background: #F5BE5C !important;
-    width: 400px;
-    // padding: 1.5rem;
-    padding-bottom: 30px !important;
+  &-check-input {
+    --bs-form-check-bg: #FFFFFF;
 
-    h1 {
-      display: none;
+    &:checked {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    &:focus {
+      border-color: hsla(var(--primary-hs), var(--primary-l), .2);
+      box-shadow: 0 0 0 .25rem hsla(var(--primary-hs), var(--primary-l), .2);
     }
   }
+}
 
-  .nologin-dialog {
-    width: 400px;
-    padding: 1.5rem;
-    background: #1F2128 !important;
-    box-shadow: 0px 24px 45px 0px rgba(36, 36, 35, 0.23);
+// ADMINISTRATION
+:root[data-bs-theme=light] .admin-page .list-group-item {
+  --bs-list-group-active-bg: var(--white-1000);
 
-    .link-switch {
-      color: #F5BE5C !important;
-    }
+  &-action {
+    --bs-list-group-action-hover-bg: #E5E5E5;
+    --bs-list-group-action-active-bg: #DBDBDB;
   }
 }
