@@ -1,0 +1,14 @@
+.alert.alert {
+  &-primary {
+    --bs-alert-color: var(--bs-body-color);
+    --bs-alert-bg: var(--primary);
+    font-weight: 600;
+    border: solid 2px #FFFFFF80;
+  }
+
+  &-secondary {
+    --bs-alert-color: var(--bs-body-color);
+    --bs-alert-bg: hsla(var(--primary-hs), var(--primary-l), 0.5);
+    border: solid 2px #F3CD8880;
+  }
+}

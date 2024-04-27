@@ -1,12 +1,16 @@
-@use '../variables' as var;
-@use '../bootstrap/init' as bs;
+@use '../utils/variables' as *;
 
-/*
- * style of inline-code
- */
-code:not([class^='language-']) {
-  padding: 2px 4px;
-  font-family: var.$font-family-monospace-not-strictly;
-  border: 1px solid;
-  border-radius: bs.$border-radius;
+code {
+  background-color: $black-1000;
+}
+
+.code {
+  &-inline {
+    color: $yellow-1000;
+    background-color: $black-1000;
+  }
+
+  &-highlighted {
+    background-color: $black-1000 !important;
+  }
 }

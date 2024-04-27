@@ -1,0 +1,17 @@
+$color: rgba(36, 36, 35, 0.1);
+
+@mixin shadow-100 {
+  box-shadow: 0px 6px 15px $color;
+}
+
+@mixin shadow-200 {
+  box-shadow: 0px 12px 22px $color;
+}
+
+@mixin shadow-300 {
+  box-shadow: 0px 24px 34px $color;
+}
+
+@mixin shadow-400 {
+  box-shadow: 0px 40px 45px $color;
+}
