@@ -5,8 +5,12 @@
 @use './atoms/alert' as *;
 @use './atoms/button' as *;
 @use './atoms/typography' as *;
+@use './atoms/code' as *;
+@use './atoms/count-pill-badge' as *;
+@use './atoms/dropdown' as *;
 
 @use './molecules/page-editor-mode-manager' as *;
+@use './molecules/page-view' as *;
 
 @use './pages/login' as *;
 
@@ -135,15 +139,15 @@
     border: none;
   }
 
-  &-page-item-control {
-    --bs-btn-color: #FFFFFF80;
-    --bs-btn-bg: transparent;
-    --bs-btn-hover-color: #FFFFFFBF;
-    --bs-btn-hover-bg: transparent;
-    --bs-btn-active-color: #EEEFF2;
-    --bs-btn-active-bg: transparent;
-    --bs-btn-border-width: 0px;
-  }
+  // &-page-item-control {
+  //   --bs-btn-color: #FFFFFF80;
+  //   --bs-btn-bg: transparent;
+  //   --bs-btn-hover-color: #FFFFFFBF;
+  //   --bs-btn-hover-bg: transparent;
+  //   --bs-btn-active-color: #EEEFF2;
+  //   --bs-btn-active-bg: transparent;
+  //   --bs-btn-border-width: 0px;
+  // }
 }
 
 .growi {
