@@ -1,47 +1,58 @@
-# GROWI Plugin Numigi Theme
+# Numigi DOCS theme
 
-> A GROWI plugin to add the Numigi brand flavor.
+This repository contains a [GROWI](https://github.com/weseek/growi) plugin for the Numigi custom UI theme.
 
-## TBD
+## Getting Started
 
-- [ ] Login page
-  - [ ] SSO buttons
-- [ ] Navigation sidebar
-  - [ ] Icons
-- [x] Header
-- [x] Administration panel
-- [ ] Components
-  - [x] Buttons
-  - [ ] Links
-    - [x] Autonomous
-    - [ ] Inline & external
-  - [x] Dropdowns
-  - [x] Checkboxes
-  - [x] Badges
-  - [x] Alerts
-  - [ ] List items
-  - [ ] Text inputs
-    - [ ] Input states
-  - [x] Code blocks and inline code
-  - [ ] Modals
-  - [x] Headings
-- [x] Various font weight adjustements
-- [ ] Optimizations for Saas
+1. Clone this repository
+2. Create a new branch
 
-## About The Project
+```bash
+git checkout -b MY_BRANCH_NAME
+```
 
-This theme is based off a GROWI preset's themes. It is built for GROWI version 7.0.0 and onward.
+3. Install the project dependencies
 
-## Contributing
+```bash
+npm install
+```
 
-1. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-2. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-3. Push to the Branch (`git push origin feature/AmazingFeature`)
-4. Open a Pull Request
+4. Test your build
 
-## Resources
+```bash
+npm run build
+```
 
-- [Othneildrew README Template](https://github.com/othneildrew/Best-README-Template)
-- [Choosing an Open Source License](https://choosealicense.com/)
-- [GROWI Documentation](https://docs.growi.org/)
-- [GROWI Install Plugins](https://docs.growi.org/en/admin-guide/management-cookbook/plugins.html#how-to-install-plugins)
+5. Commit your changes
+6. Open a pull request
+
+### Commits & Releases
+
+#### Committing
+
+Commits format is enforced using [Commitizen](https://github.com/commitizen/cz-cli) and follows the [AngularJS commit standard](https://github.com/angular/angular/blob/main/CONTRIBUTING.md#type).
+
+This allows for [easier automated releases](#automated-releases)
+
+#### Automated Releases
+
+Releases and packages version changes are all automated using [semantic-release](https://semantic-release.gitbook.io/semantic-release).
+
+Its configuration is available in the `.releaserc.json` file.
+
+Make sure that the `TOKEN` action secret is configured and has access to this repository.
+
+## Ressources
+
+This plugin design is based off [GROWI's Vivid Internet plugin example](https://github.com/weseek/growi-plugin-theme-vivid-internet).
+
+### Structure
+
+The structure is divided following a Sass atomic structure. This helps creating and maintaining components rules in many files, from the least complex element to a complete page.
+
+![alt text](sass-atomic.png)
+
+Many articles and blogs refer to this type of architecture convention;
+
+- [Atomic Design System Architecture with SCSS, ITCSS](https://gael-boyenval.gitbook.io/atomic-design-css-architecture-with-itcss-bem-sass/principles/atomic-design-system)
+- [Atomic Design - Your Ultimate Guide to Scalable & Modular CSS (Sass)](https://blog.alexdevero.com/atomic-design-scalable-modular-css-sass/)
