@@ -2,31 +2,47 @@
   "name": "numigi-docs-theme",
   "version": "0.1.0",
   "description": "GROWI plugin for the Numigi theme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Numigi/numigi-docs-theme.git"
+  },
   "main": "dist/libs/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
+    "build": "yarn pre-commit && vite build",
     "build:w": "yarn build -w",
-    "lint:eslint": "eslint --quiet \"**/*.{js,jsx,ts,tsx}\"",
-    "lint:styles": "stylelint src/**/*.scss",
-    "lint": "run-p lint:*",
-    "preview": "vite preview"
+    "lint": "stylelint src/**/*.scss",
+    "lint:apply": "stylelint --fix src/**/*.scss",
+    "prepare": "husky && git config --local core.editor cat",
+    "test": "vitest run"
   },
   "devDependencies": {
     "@growi/core-styles": "^1.0.0",
     "@growi/pluginkit": "^1.0.0",
     "@types/node": "^20.12.13",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.0.7",
+    "@semantic-release/npm": "^12.0.1",
     "bootstrap": "^5.3.3",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.0.11",
     "prettier": "^3.3.2",
     "sass": "^1.77.4",
+    "semantic-release": "^24.0.0",
     "stylelint": "^16.6.1",
     "stylelint-config-recess-order": "^5.0.1",
     "stylelint-config-standard-scss": "^13.1.0",
     "vite": "^5.2.13",
     "vitest": "^1.6.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "growiPlugin": {
     "schemaVersion": "4",
