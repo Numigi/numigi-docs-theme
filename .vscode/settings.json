@@ -17,7 +17,6 @@
     "source.fixAll.stylelint": "explicit"
   },
 
-  "githubPullRequests.ignoredPullRequestBranches": [
-    "main"
-  ]
+  "githubPullRequests.ignoredPullRequestBranches": ["main"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

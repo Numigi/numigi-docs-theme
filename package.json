@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn pre-commit && vite build",
+    "build": "vite build",
     "build:w": "yarn build -w",
     "lint": "stylelint src/**/*.scss",
     "lint:apply": "stylelint --fix src/**/*.scss",
