@@ -1,0 +1,16 @@
+@use '../settings/variables' as *;
+
+:root[data-bs-theme='light'] {
+    --bs-primary: #{$yellow-1000};
+    --grw-sidebar-head-bg: #{$black-1000};
+    --bs-code-color: #{$yellow-1000};
+    --bs-body-color: #{$black-1000};
+    --bs-secondary-color: #{$black-1000};
+    --bs-border-width: 1.5px;
+    --bs-border-color: #{$black-300};
+    --grw-sidebar-nav-bg: #{$black-1000};
+    --grw-sidebar-nav-btn-bg: #{$yellow-1000};
+    --grw-sidebar-nav-btn-color: #{$black-600};
+    --grw-sidebar-nav-btn-hover-color: #{$white-1000};
+    --grw-sidebar-nav-btn-active-color: #FFF;
+}
