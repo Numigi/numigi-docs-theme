@@ -1,0 +1,21 @@
+@use '../settings/variables' as *;
+@use '../atoms/mixins/shadows' as *;
+
+$prefix: '--bs-dropdown';
+
+:root[data-bs-theme="light"] .dropdown {
+  &-menu {
+    #{$prefix}-bg: #F5F6F7B2;
+    #{$prefix}-border-color: $black-300;
+    #{$prefix}-border-radius: 7px;
+    #{$prefix}-border-width: 1px;
+    #{$prefix}-link-color: $black-1000;
+    #{$prefix}-link-hover-color: $black-1000;
+    #{$prefix}-link-hover-bg: $yellow-200;
+    #{$prefix}-link-active-color: $black-1000;
+    #{$prefix}-link-active-bg: $yellow-300;
+    backdrop-filter: blur(15px);
+
+    @include shadow-100($black-1000, 10%);
+  }
+}
