@@ -1,8 +1,9 @@
-@use '../../utils/variables' as *;
+@use '../../settings/variables' as *;
 
 @mixin common {
   border-width: 2px;
   border-radius: 100px;
+
   @include typography;
 }
 
@@ -12,56 +13,62 @@
   line-height: 1.63rem;
 }
 
+$prefix: '--bs-btn';
+
 @mixin primary {
-  --bs-btn-color: #{$black-1000};
-  --bs-btn-bg: var(--primary);
-  --bs-btn-border-color: var(--primary);
-  --bs-btn-hover-color: #{$black-1000};
-  --bs-btn-hover-bg: #F4C36B;
-  --bs-btn-hover-border-color: #F4C36B;
-  --bs-btn-focus-shadow-rgb: 0, 0, 0, 0;
-  --bs-btn-active-color: #{$black-1000};
-  --bs-btn-active-bg: #F3CD88;
-  --bs-btn-active-border-color: #F3CD88;
-  --bs-btn-active-shadow: 0;
-  --bs-btn-disabled-color: #B2B2B2;
-  --bs-btn-disabled-bg: #F2E7C9;
-  --bs-btn-disabled-border-color: #F2E7C9;
+  #{$prefix}-color: $black-1000;
+  #{$prefix}-bg: $yellow-1000;
+  #{$prefix}-border-color: $yellow-1000;
+  #{$prefix}-hover-color: $black-1000;
+  #{$prefix}-hover-bg: $yellow-900;
+  #{$prefix}-hover-border-color: $yellow-900;
+  #{$prefix}-focus-shadow-rgb: 0, 0, 0, 0;
+  #{$prefix}-active-color: $black-1000;
+  #{$prefix}-active-bg: $yellow-750;
+  #{$prefix}-active-border-color: $yellow-750;
+  #{$prefix}-active-shadow: 0;
+  #{$prefix}-disabled-color: #B2B2B2;
+  #{$prefix}-disabled-bg: #F2E7C9;
+  #{$prefix}-disabled-border-color: #F2E7C9;
+
   @include common;
 }
 
 @mixin secondary {
-  --bs-btn-color: #{$black-1000};
-  --bs-btn-bg: transparent;
-  --bs-btn-border-color: #{$black-1000};
-  --bs-btn-hover-color: #{$black-1000};
-  --bs-btn-hover-bg: #343433;
-  --bs-btn-hover-border-color: #343433;
-  --bs-btn-focus-shadow-rgb: 0, 0, 0, 0;
-  --bs-btn-active-color: $white;
-  --bs-btn-active-bg: #474746;
-  --bs-btn-active-border-color: #474746;
-  --bs-btn-active-shadow: 0;
-  --bs-btn-disabled-color: #EFEFEF;
-  --bs-btn-disabled-bg: #BDBDBC;
-  --bs-btn-disabled-border-color: #BDBDBC;
+  // #{$prefix}-color: $black-1000;
+  // #{$prefix}-bg: $white-1000;
+  // #{$prefix}-border-color: $white-1000;
+  // #{$prefix}-hover-color: $white-1000;
+  // #{$prefix}-hover-bg: $red-900;
+  // #{$prefix}-hover-border-color: $red-900;
+  // #{$prefix}-focus-shadow-rgb: 0, 0, 0, 0;
+  // #{$prefix}-active-color: $white-1000;
+  // #{$prefix}-active-bg: $red-800;
+  // #{$prefix}-active-border-color: $red-800;
+  // #{$prefix}-active-shadow: 0;
+  // #{$prefix}-disabled-color: #EFEFEF;
+  // #{$prefix}-disabled-bg: #BDBDBC;
+  // #{$prefix}-disabled-border-color: #BDBDBC;
+
   @include common;
 }
 
 @mixin outline-primary {
-  --bs-btn-color: var(--bs-body-bg);
-  --bs-btn-bg: transparent;
-  --bs-btn-border-color: var(--primary);
-  --bs-btn-hover-color: #{$black-1000};
-  --bs-btn-hover-bg: var(--primary);
-  --bs-btn-hover-border-color: var(--primary);
-  --bs-btn-active-color: #{$black-1000};
-  --bs-btn-active-bg: #F3CD88;
-  --bs-btn-active-border-color: #F3CD88;
-  --bs-btn-active-shadow: 0, 0, 0, 0;
-  --bs-btn-disabled-color: #B2B2B2;
-  --bs-btn-disabled-bg: #F2E7C9;
-  --bs-btn-disabled-border-color: #F2E7C9;
+  // #{$prefix}-color: $black-1000;
+  // #{$prefix}-bg: $white-1000;
+  // #{$prefix}-border-color: $white-1000;
+  // #{$prefix}-hover-color: $white-1000;
+  // #{$prefix}-hover-bg: $red-900;
+  // #{$prefix}-hover-border-color: $red-900;
+  // #{$prefix}-focus-shadow-rgb: 0, 0, 0, 0;
+  // #{$prefix}-active-color: $white-1000;
+  // #{$prefix}-active-bg: $red-800;
+  // #{$prefix}-active-border-color: $red-800;
+  // #{$prefix}-active-shadow: 0;
+  // #{$prefix}-disabled-color: #EFEFEF;
+  // #{$prefix}-disabled-bg: #BDBDBC;
+  // #{$prefix}-disabled-border-color: #BDBDBC;
+
   @include common;
 }
 
@@ -79,6 +86,7 @@
   --bs-btn-disabled-color: #EFEFEF;
   --bs-btn-disabled-bg: #BDBDBC;
   --bs-btn-disabled-border-color: #BDBDBC;
+
   @include common;
 }
 
@@ -96,6 +104,8 @@
   --bs-btn-disabled-color: #EFEFEF !important;
   --bs-btn-disabled-bg: #BDBDBC !important;
   --bs-btn-disabled-border-color: #BDBDBC !important;
+
   padding: .3rem .5rem;
+
   @include common;
 }

@@ -1,6 +1,6 @@
 @use './mixins/button' as button;
 
-:root[data-bs-theme=light] .btn {
+:root[data-bs-theme="light"] .btn {
   &-primary {
     @include button.primary;
   }
