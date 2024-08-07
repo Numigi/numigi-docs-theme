@@ -1,6 +1,6 @@
-@use '../utils/variables' as *;
+@use '../settings/variables' as *;
 
-:root[data-bs-theme=light] .grw-count-badge.bg-light {
+:root[data-bs-theme="light"] .grw-count-badge.bg-light {
   position: relative;
   top: auto;
   color: $black-1000 !important;

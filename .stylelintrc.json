@@ -1,0 +1,23 @@
+{
+    "extends": [
+        "stylelint-config-standard-scss",
+        "stylelint-config-recess-order"
+    ],
+    "ignoreFiles": "dist/**/*",
+    "rules": {
+        "rule-empty-line-before": [
+            "always-multi-line",
+            {
+                "except": [
+                    "after-single-line-comment",
+                    "first-nested"
+                ],
+                "ignore": [
+                    "after-comment",
+                    "inside-block"
+                ]
+            }
+        ],
+        "no-invalid-position-at-import-rule": null
+    }
+}
