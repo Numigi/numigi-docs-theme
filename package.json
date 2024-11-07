@@ -2,6 +2,7 @@
   "name": "numigi-docs-theme",
   "version": "0.1.0",
   "description": "GROWI plugin for the Numigi theme",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:Numigi/numigi-docs-theme.git"
