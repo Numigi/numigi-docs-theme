@@ -1,13 +1,11 @@
 @use '../settings/variables' as *;
 
-code {
-  background-color: $black-1000;
-  border-color: $black-1000;
+$prefix: '--bs-code';
+
+:root[data-bs-theme="light"] {
+  #{$prefix}-color: $yellow-1000;
 }
 
-.code {
-  &-inline {
-    color: $yellow-1000;
-    background-color: $black-1000;
-  }
+code {
+  background-color: $black-1000;
 }

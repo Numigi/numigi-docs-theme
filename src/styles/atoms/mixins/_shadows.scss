@@ -1,7 +1,7 @@
 @use '../../settings/variables' as *;
 
 @mixin shadow-100($color, $opacity) {
-  box-shadow: 0 6px 15px rgba($color, $opacity);
+  box-shadow: 0 6px 6px rgba($color, $opacity);
 }
 
 @mixin shadow-200($color, $opacity) {

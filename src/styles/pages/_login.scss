@@ -1,6 +1,8 @@
 @use '../atoms/mixins/button' as button;
+@use '../atoms/mixins/shadows' as *;
+@use '../settings/variables' as *;
 
-:root[data-bs-theme=light] .nologin {
+:root[data-bs-theme="light"] .nologin {
   // References the image runtime path
   background: url('../images/background.png');
   background-repeat: no-repeat;
@@ -9,8 +11,14 @@
 
   .input-group {
     input {
-      color: var(--bgcolor-global);
-      background: #353945;
+      color: $white-1000;
+      background: $black-1000;
+      border: solid 2px $white-1000;
+      border-radius: unset !important;
+
+      &::placeholder {
+        color: $black-600;
+      }
     }
   }
 
@@ -19,49 +27,39 @@
 
     &-login {
       @include button.primary;
+
       width: 100%;
       padding: 1rem 6rem;
-
-      .material-symbols-outlined {
-        color: var(--bs-body-color);
-      }
-
-      .flex-grow-1 {
-        color: var(--bs-body-color);
-      }
     }
 
     &-register {
       @include button.primary;
+
       width: 100%;
       padding: 1rem 6rem;
+    }
 
-      .material-symbols-outlined {
-        color: var(--bs-body-color);
-      }
+    &-function {
+      @include button.function;
 
-      .flex-grow-1 {
-        color: var(--bs-body-color);
-      }
+      font-size: 14px;
+      font-weight: 400;
     }
   }
 
-  .nologin-header {
-    width: 400px;
-    // padding: 1.5rem;
-    padding-bottom: 30px;
-    background: var(--primary);
-
-    h1 {
-      display: none;
+  .nologin {
+    &-header {
+      background: $yellow-1000;
+      border-radius: unset !important;
     }
-  }
 
-  .nologin-dialog {
-    width: 400px;
-    padding: 1.5rem;
-    background: var(--bs-body-color);
-    box-shadow: 0px 24px 45px 0px rgba(36, 36, 35, 0.23);
+    &-dialog {
+      @include shadow-300($black-1000, 20%);
+
+      padding: 1.5rem;
+      background: $black-1000;
+      border-radius: unset !important;
+    }
   }
 
   .link-growi-org {

@@ -5,6 +5,8 @@ $prefix: '--bs-dropdown';
 
 :root[data-bs-theme="light"] .dropdown {
   &-menu {
+    @include shadow-100($black-1000, 10%);
+
     #{$prefix}-bg: #F5F6F7B2;
     #{$prefix}-border-color: $black-300;
     #{$prefix}-border-radius: 7px;
@@ -15,7 +17,5 @@ $prefix: '--bs-dropdown';
     #{$prefix}-link-active-color: $black-1000;
     #{$prefix}-link-active-bg: $yellow-300;
     backdrop-filter: blur(15px);
-
-    @include shadow-100($black-1000, 10%);
   }
 }

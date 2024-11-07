@@ -1,0 +1,9 @@
+@use '../settings/variables' as *;
+
+$prefix: '--bs-body';
+
+:root[data-bs-theme='light'] {
+    #{$prefix}-bg: #{$white-1000};
+    #{$prefix}-color: #{$black-1000};
+    #{$prefix}-font-weight: 500;
+}

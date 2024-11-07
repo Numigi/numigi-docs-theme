@@ -1,9 +1,0 @@
-@use 'init' as *;
-
-@import 'bootstrap/scss/utilities';
-@import 'bootstrap/scss/root';
-
-// import bootstrap
-@import 'bootstrap/scss/bootstrap';
-// override
-@import './override';

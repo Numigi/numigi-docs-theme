@@ -1,7 +1,8 @@
-@mixin typo-spec($size, $weight, $height) {
+@mixin typo-spec($size, $weight, $height, $spacing) {
   font-size: $size;
   font-weight: $weight;
   line-height: $height;
+  letter-spacing: $spacing;
 }
 
 $custom-font: 'Manrope';
@@ -11,31 +12,31 @@ $custom-font: 'Manrope';
 
   .wiki {
     h1 {
-      @include typo-spec(72px, 700, 86px);
+      @include typo-spec(3rem, 700, 4rem, -0.1rem);
     }
 
     h2 {
-      @include typo-spec(45px, 600, 56px);
+      @include typo-spec(2.25rem, 600, 3rem, 0);
     }
 
     h3 {
-      @include typo-spec(36px, 600, 50px);
+      @include typo-spec(1.875rem, 500, 3rem, 0);
     }
 
     h4 {
-      @include typo-spec(24px, 600, 44px);
+      @include typo-spec(1.5rem, 500, 2.75rem, 0);
     }
 
     h5 {
-      @include typo-spec(22px, 600, 36px);
+      @include typo-spec(1.25rem, 500, 2.25rem, -0.063rem);
     }
 
     h6 {
-      @include typo-spec(20px, 600, 28px);
+      @include typo-spec(1.1rem, 500, 1.75rem, 0);
     }
 
     p {
-      @include typo-spec(18px, 400, 27px);
+      @include typo-spec(1.125rem, 400, 1.6rem, 0);
     }
   }
 }

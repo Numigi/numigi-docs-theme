@@ -1,0 +1,12 @@
+@use '../settings/variables' as *;
+
+$prefix: '--grw-sidebar';
+
+:root[data-bs-theme='light'] {
+    #{$prefix}-head-bg: #{$black-1000};
+    #{$prefix}-nav-bg: #{$black-1000};
+    #{$prefix}-nav-btn-bg: #{$yellow-1000};
+    #{$prefix}-nav-btn-color: #{$black-600};
+    #{$prefix}-nav-btn-hover-color: #{$white-1000};
+    #{$prefix}-nav-btn-active-color: #{$white-1000};
+}

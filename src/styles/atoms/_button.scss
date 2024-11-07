@@ -20,4 +20,8 @@
   &-outline-neutral-secondary {
     @include button.outline-neutral-secondary;
   }
+
+  &-function {
+    @include button.function;
+  }
 }

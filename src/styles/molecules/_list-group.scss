@@ -2,34 +2,29 @@
 
 $prefix: '--bs-list-group';
 
-.list-group {
-    #{$prefix}-border-color: $yellow-200;
+:root[data-bs-theme='light'] .list-group {
+    #{$prefix}-border-color: $black-1000;
     #{$prefix}-color: $black-1000;
     #{$prefix}-action-hover-color: $black-1000;
 
     &-item {
-        &.active {
-            color: $white-800 !important;
-        }
-    }
-}
-
-:root[data-bs-theme='light'] .list-group {
-    &-item {
-        #{$prefix}-active-bg: $yellow-1000;
+        #{$prefix}-active-bg: $yellow-700;
 
         &-action {
-            #{$prefix}-action-hover-bg: $yellow-100;
-            #{$prefix}-action-active-bg: $yellow-200;
+            #{$prefix}-action-hover-bg: $yellow-400;
+            #{$prefix}-action-active-bg: $yellow-500;
         }
     }
 }
 
-:root[data-bs-theme="light"] .admin-page .list-group-item {
-    #{$prefix}-active-bg: $black-1000;
+:root[data-bs-theme="light"] .admin-page .list-group {
+    &-item {
+        #{$prefix}-active-bg: $black-1000;
+        #{$prefix}-active-color: $white-1000;
 
-    &-action {
-        #{$prefix}-action-hover-bg: #E5E5E5;
-        #{$prefix}-action-active-bg: #DBDBDB;
+        &-action {
+            #{$prefix}-action-hover-bg: #E5E5E5;
+            #{$prefix}-action-active-bg: #DBDBDB;
+        }
     }
 }

@@ -1,0 +1,14 @@
+@use '../settings/variables' as *;
+
+$prefix: '--bs-btn';
+
+:root[data-bs-theme='light'] {
+    .sidebar-contents-container {
+        background-color: $yellow-200 !important;
+        border-right: 4px solid $yellow-1000;
+    }
+
+    .grw-navigation-draggable-line {
+        background-color: $yellow-1000;
+    }
+}
