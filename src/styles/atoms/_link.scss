@@ -1,0 +1,45 @@
+@use '../settings/variables' as *;
+
+@mixin link($size, $color) {
+    color: $color;
+    border-bottom: solid $size $color;
+}
+
+a {
+    &.toc-link {
+        color: $black-1000;
+
+        &:hover {
+            @include link(1.5px, $yellow-1000);
+        }
+
+        &:active {
+            color: $yellow-1200;
+            border: none;
+        }
+    }
+}
+
+.growi {
+    .wiki {
+        a {
+            text-decoration: none;
+
+            &:not(.alert-link) {
+                @include link(1.5px, $black-1000);
+
+                &:hover {
+                    @include link(1.5px, $black-900);
+                }
+
+                &:active {
+                    @include link(1.5px, $black-800);
+                }
+
+                &:visited {
+                    @include link(1.5px, $yellow-1200);
+                }
+            }
+        }
+    }
+}

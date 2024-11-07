@@ -1,14 +1,47 @@
-.alert.alert {
-  &-primary {
-    --bs-alert-color: var(--bs-body-color);
-    --bs-alert-bg: var(--primary);
-    font-weight: 600;
-    border: solid 2px #FFFFFF80;
-  }
+@use '../settings/variables' as *;
 
-  &-secondary {
-    --bs-alert-color: var(--bs-body-color);
-    --bs-alert-bg: hsla(var(--primary-hs), var(--primary-l), 0.5);
-    border: solid 2px #F3CD8880;
+@mixin title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+@mixin alert($color, $bg, $border) {
+  --bs-alert-color: #{$color};
+  --bs-alert-bg: #{$bg};
+  --bs-alert-border-color: #{$border};
+}
+
+.growi {
+  .wiki {
+    & .alert {
+      &-title {
+        @include title;
+      }
+
+      &-primary {
+        @include alert($red-1000, $red-100, $red-1000);
+      }
+
+      &-secondary {
+        @include alert($blue-1000, $blue-100, $blue-1000);
+      }
+
+      &-success {
+        @include alert('#188B24', '#E9F9E8', '#33C541');
+      }
+
+      &-danger {
+        @include alert($white-800, $red-1000, $red-1000);
+      }
+
+      &-warning {
+        @include alert('#9E7B11', $yellow-100, $yellow-1000);
+      }
+
+      &-info {
+        @include alert($black-600, '#7C7F831A', $black-600);
+      }
+    }
   }
 }

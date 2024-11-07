@@ -1,0 +1,35 @@
+@use '../settings/variables' as *;
+
+@mixin input-focus($color) {
+    box-shadow: 0 0 0 .25rem $color;
+}
+
+:root[data-bs-theme="light"] .form {
+    &-check-input {
+        background-color: #fff;
+
+        &:focus {
+            @include input-focus($yellow-200);
+        }
+
+        &:checked {
+            background-color: $yellow-1000;
+            border-color: $yellow-1000;
+        }
+    }
+
+    &-control {
+        color: $black-1000;
+        background-color: #fff;
+
+        &::placeholder {
+            color: $black-600
+        }
+
+        &:focus {
+            @include input-focus($yellow-200);
+
+            border-color: $black-600;
+        }
+    }
+}

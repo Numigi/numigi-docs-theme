@@ -1,0 +1,8 @@
+@use '../settings/variables' as *;
+
+$prefix: '--bs-nav-link';
+
+.nav {
+    #{$prefix}-color: $black-800;
+    #{$prefix}-hover-color: $yellow-1000;
+}

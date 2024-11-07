@@ -1,101 +1,87 @@
-@use '../../utils/variables' as *;
+@use '../../settings/variables' as *;
 
 @mixin common {
   border-width: 2px;
   border-radius: 100px;
+
   @include typography;
 }
 
 @mixin typography {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 1.63rem;
+  line-height: 24px;
 }
 
+$prefix: '--bs-btn';
+
 @mixin primary {
-  --bs-btn-color: #{$black-1000};
-  --bs-btn-bg: var(--primary);
-  --bs-btn-border-color: var(--primary);
-  --bs-btn-hover-color: #{$black-1000};
-  --bs-btn-hover-bg: #F4C36B;
-  --bs-btn-hover-border-color: #F4C36B;
-  --bs-btn-focus-shadow-rgb: 0, 0, 0, 0;
-  --bs-btn-active-color: #{$black-1000};
-  --bs-btn-active-bg: #F3CD88;
-  --bs-btn-active-border-color: #F3CD88;
-  --bs-btn-active-shadow: 0;
-  --bs-btn-disabled-color: #B2B2B2;
-  --bs-btn-disabled-bg: #F2E7C9;
-  --bs-btn-disabled-border-color: #F2E7C9;
+  #{$prefix}-color: $black-1000;
+  #{$prefix}-bg: $yellow-1000;
+  #{$prefix}-border-color: $yellow-1000;
+  #{$prefix}-hover-color: $black-1000;
+  #{$prefix}-hover-bg: $yellow-900;
+  #{$prefix}-hover-border-color: $yellow-900;
+  #{$prefix}-focus-shadow-rgb: 0;
+  #{$prefix}-active-color: $black-1000;
+  #{$prefix}-active-bg: $yellow-750;
+  #{$prefix}-active-border-color: $yellow-750;
+  #{$prefix}-active-shadow: 0;
+  #{$prefix}-disabled-color: $white-1000;
+  #{$prefix}-disabled-bg: $yellow-200;
+  #{$prefix}-disabled-border-color: $yellow-200;
+
   @include common;
 }
 
 @mixin secondary {
-  --bs-btn-color: #{$black-1000};
-  --bs-btn-bg: transparent;
-  --bs-btn-border-color: #{$black-1000};
-  --bs-btn-hover-color: #{$black-1000};
-  --bs-btn-hover-bg: #343433;
-  --bs-btn-hover-border-color: #343433;
-  --bs-btn-focus-shadow-rgb: 0, 0, 0, 0;
-  --bs-btn-active-color: $white;
-  --bs-btn-active-bg: #474746;
-  --bs-btn-active-border-color: #474746;
-  --bs-btn-active-shadow: 0;
-  --bs-btn-disabled-color: #EFEFEF;
-  --bs-btn-disabled-bg: #BDBDBC;
-  --bs-btn-disabled-border-color: #BDBDBC;
+  #{$prefix}-color: $black-1000;
+  #{$prefix}-bg: transparent;
+  #{$prefix}-border-color: $black-1000;
+  #{$prefix}-hover-color: #{$white-1000};
+  #{$prefix}-hover-bg: #343433;
+  #{$prefix}-hover-border-color: #343433;
+  #{$prefix}-focus-shadow-rgb: 0;
+  #{$prefix}-active-color: #{$white-1000};
+  #{$prefix}-active-bg: #474746;
+  #{$prefix}-active-border-color: #474746;
+  #{$prefix}-active-shadow: 0;
+  #{$prefix}-disabled-color: $yellow-200;
+  #{$prefix}-disabled-bg: #F5F0F1;
+  #{$prefix}-disabled-border-color: #F5F0F1;
+
   @include common;
 }
 
 @mixin outline-primary {
-  --bs-btn-color: var(--bs-body-bg);
-  --bs-btn-bg: transparent;
-  --bs-btn-border-color: var(--primary);
-  --bs-btn-hover-color: #{$black-1000};
-  --bs-btn-hover-bg: var(--primary);
-  --bs-btn-hover-border-color: var(--primary);
-  --bs-btn-active-color: #{$black-1000};
-  --bs-btn-active-bg: #F3CD88;
-  --bs-btn-active-border-color: #F3CD88;
-  --bs-btn-active-shadow: 0, 0, 0, 0;
-  --bs-btn-disabled-color: #B2B2B2;
-  --bs-btn-disabled-bg: #F2E7C9;
-  --bs-btn-disabled-border-color: #F2E7C9;
+  @include secondary;
   @include common;
 }
 
 @mixin outline-secondary {
-  --bs-btn-color: #{$black-1000};
-  --bs-btn-bg: transparent;
-  --bs-btn-border-color: #{$black-1000};
-  --bs-btn-hover-color: var(--bs-body-bg);
-  --bs-btn-hover-bg: #343433;
-  --bs-btn-hover-border-color: #343433;
-  --bs-btn-active-color: var(--bs-body-bg);
-  --bs-btn-active-bg: #474746;
-  --bs-btn-active-border-color: #474746;
-  --bs-btn-active-shadow: 0, 0, 0, 0;
-  --bs-btn-disabled-color: #EFEFEF;
-  --bs-btn-disabled-bg: #BDBDBC;
-  --bs-btn-disabled-border-color: #BDBDBC;
+  @include secondary;
   @include common;
 }
 
 @mixin outline-neutral-secondary {
-  --bs-btn-color: #{$black-1000} !important;
-  --bs-btn-bg: transparent !important;
-  --bs-btn-border-color: #{$black-1000} !important;
-  --bs-btn-hover-color: var(--bs-body-bg) !important;
-  --bs-btn-hover-bg: #343433 !important;
-  --bs-btn-hover-border-color: #343433 !important;
-  --bs-btn-active-color: var(--bs-body-bg) !important;
-  --bs-btn-active-bg: #474746 !important;
-  --bs-btn-active-border-color: #474746 !important;
-  --bs-btn-active-shadow: 0, 0, 0, 0 !important;
-  --bs-btn-disabled-color: #EFEFEF !important;
-  --bs-btn-disabled-bg: #BDBDBC !important;
-  --bs-btn-disabled-border-color: #BDBDBC !important;
-  padding: .3rem .5rem;
+  @include secondary;
+  @include common;
+}
+
+@mixin function {
+  #{$prefix}-color: #{$white-1000};
+  #{$prefix}-bg: transparent;
+  #{$prefix}-border-color: transparent;
+  #{$prefix}-hover-color: #{$yellow-1000};
+  #{$prefix}-hover-bg: transparent;
+  #{$prefix}-hover-border-color: transparent;
+  #{$prefix}-active-color: #{$yellow-900};
+  #{$prefix}-active-bg: transparent;
+  #{$prefix}-active-border-color: transparent;
+  #{$prefix}-active-shadow: 0;
+  #{$prefix}-disabled-color: #EFEFEF;
+  #{$prefix}-disabled-bg: #BDBDBC;
+  #{$prefix}-disabled-border-color: #BDBDBC;
+
   @include common;
 }

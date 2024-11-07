@@ -1,0 +1,8 @@
+@use '../settings/variables' as *;
+
+:root[data-bs-theme='light'] {
+    --bs-primary: #{$yellow-1000};
+    --bs-secondary-color: #{$black-1000};
+    --bs-border-width: 1.5px;
+    --bs-border-color: #{$black-300};
+}
