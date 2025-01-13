@@ -24,4 +24,18 @@
   &-function {
     @include button.function;
   }
+
+  &-auth {
+    &-oidc {
+      @include button.auth;
+    }
+
+    &-google {
+      @include button.auth;
+    }
+
+    &-github {
+      @include button.auth;
+    }
+  }
 }
