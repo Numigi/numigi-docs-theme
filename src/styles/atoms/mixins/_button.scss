@@ -38,11 +38,11 @@ $prefix: '--bs-btn';
   #{$prefix}-color: $black-1000;
   #{$prefix}-bg: transparent;
   #{$prefix}-border-color: $black-1000;
-  #{$prefix}-hover-color: #{$white-1000};
+  #{$prefix}-hover-color: $white-1000;
   #{$prefix}-hover-bg: #343433;
   #{$prefix}-hover-border-color: #343433;
   #{$prefix}-focus-shadow-rgb: 0;
-  #{$prefix}-active-color: #{$white-1000};
+  #{$prefix}-active-color: $white-1000;
   #{$prefix}-active-bg: #474746;
   #{$prefix}-active-border-color: #474746;
   #{$prefix}-active-shadow: 0;
@@ -69,19 +69,39 @@ $prefix: '--bs-btn';
 }
 
 @mixin function {
-  #{$prefix}-color: #{$white-1000};
+  #{$prefix}-color: $white-1000;
   #{$prefix}-bg: transparent;
   #{$prefix}-border-color: transparent;
-  #{$prefix}-hover-color: #{$yellow-1000};
+  #{$prefix}-hover-color: $yellow-1000;
   #{$prefix}-hover-bg: transparent;
   #{$prefix}-hover-border-color: transparent;
-  #{$prefix}-active-color: #{$yellow-900};
+  #{$prefix}-active-color: $yellow-900;
   #{$prefix}-active-bg: transparent;
   #{$prefix}-active-border-color: transparent;
   #{$prefix}-active-shadow: 0;
   #{$prefix}-disabled-color: #EFEFEF;
   #{$prefix}-disabled-bg: #BDBDBC;
   #{$prefix}-disabled-border-color: #BDBDBC;
+
+  @include common;
+}
+
+@mixin auth {
+  #{$prefix}-color: $white-1000 !important;
+  #{$prefix}-bg: transparent !important;
+  #{$prefix}-border-color: $white-1000 !important;
+  #{$prefix}-hover-color: $black-1000 !important;
+  #{$prefix}-hover-bg: #E5E5E5 !important;
+  #{$prefix}-hover-border-color: #E5E5E5 !important;
+  #{$prefix}-active-color: $black-1000 !important;
+  #{$prefix}-active-bg: #DBDBDB !important;
+  #{$prefix}-active-border-color: #DBDBDB !important;
+  #{$prefix}-active-shadow: 0 !important;
+  #{$prefix}-disabled-color: #EFEFEF !important;
+  #{$prefix}-disabled-bg: #BDBDBC !important;
+  #{$prefix}-disabled-border-color: #BDBDBC !important;
+  width: 100%;
+  padding: 1rem;
 
   @include common;
 }
