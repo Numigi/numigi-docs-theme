@@ -42,15 +42,32 @@
     &-function {
       @include button.function;
 
+      width: 100%;
+      padding: unset;
       font-size: 14px;
       font-weight: 400;
+
+      .material-symbols-outlined {
+        display: none;
+      }
     }
   }
 
   .nologin {
     &-header {
+      padding: 15px 0;
       background: $yellow-1000;
       border-radius: unset !important;
+
+      img {
+        width: 107px;
+        height: 25px;
+        content: url('../images/logo.png');
+      }
+
+      svg {
+        display: none;
+      }
     }
 
     &-dialog {
@@ -59,6 +76,14 @@
       padding: 1.5rem;
       background: $black-1000;
       border-radius: unset !important;
+
+      label.text-white {
+        color: $white-1000 !important;
+      }
+
+      .text-center {
+        display: none !important;
+      }
     }
   }
 
